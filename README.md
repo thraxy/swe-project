@@ -39,3 +39,15 @@ The following business requirements should be read in conjunction with the offic
 | BRQ-9 | Parking Search Results Page | Users will be able to further filter their search results. | User wil be able to further filter their results. **Filter attributes to be determined.** Users will also be able to get directions, see the addresss of the facility, and zoom in and out with the dynamic map. |
 | BRQ-12 | About Us Page | This page will display information about the history of the company and the current heads of management. | |
 | BRQ-13| Contact Us Page | This page will display general contact inforrmation for users. | |
+
+# User Interface Requirements
+
+- The new website will be responsive to three standard resolutions (breakpoints): Desktop, tablet, and mobile.
+- The user should be able to find information with a minimal amount of clicks
+
+# Non-Functional Requirements
+
+Application Security:
+- The new site will be developed against OWASP secure coding standards, specifically the OWASP top 10 (2017). **https://owasp.org/www-project-top-ten/2017/**
+- The website will be assessed for vulnerabilites ahead of deployment to production. **All critical and high vulnerabilites will be remediated prior to launch.**
+- The new site will be secured under HTTPS using an appropriate SSL certificate that is trusted by all primary browsers.

@@ -1,32 +1,39 @@
 <!-- search script for parking -->
 
 <?php
-// Connect to the database
-$db = new PDO($dsn, $user, $password);
 
-$sql = file_get_contents('entries.sql');
+// variables for connection
+$server = "localhost";
+$user = "root";
+$pass = "";
+$db = "entries";
 
+// connect to database
+$conn = mysqli_connect($server, $user, $pass, $db);
 
+// select database
+mysqli_select_db("entries");
 
+// get search term
+$searchTerm = $_POST['search'];
 
-$sql = "SELECT * FROM `entries`;";
+// get matched data from database
+$query = mysqli_query("select * from entries", $connection);
+$db = mysqli_query("select * from address", $connection);
 
-// Get the search term
-$searchTerm = $_GET['term'];
+// fetch data
+<span name: </span> 
+    <?php echo $row['name']; ?>
+<span address: </span>
+    <?php echo $row['address']; ?>
+<span city: </span>
+    <?php echo $row['city']; ?>
+<span state: </span>
+    <?php echo $row['state']; ?>
+<span zip: </span>
+    <?php echo $row['zipcode']; ?>
 
-// Get matched data from skills table
-$query = $db->query("SELECT * FROM parking WHERE name LIKE '%".$searchTerm."%' ORDER BY name ASC");
+mysqli_close($connection);
 
-// Generate skills data array
-$skillData = array();
-if($query->num_rows > 0){
-    while($row = $qr = $db->exec($sql)){
-        $data['id'] = $row['id'];
-        $data['value'] = $row['name'];
-        array_push($skillData, $data);
-    }
-}
-
-// Return results as json encoded array
-echo json_encode($skillData);
 ?>
+

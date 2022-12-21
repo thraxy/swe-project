@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script src="js/index.js"></script> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-inverse">
@@ -26,20 +26,15 @@
     </div>
 </nav>
 
-<div id="myOverlay" class="overlay">
-    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
-    <div class="overlay-content">
-      <form action="action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button style="font-size:24px" type="submit"><i class="fa fa-search"></i></button>
-        <input type="radio" id="hr" name="Hourly" value="hr">
-        <label for="hr">Hourly</label><br>
-        <input type="radio" id="mnt" name="Monthly" value="mnt">
-        <label for="mnt">Monthly</label><br>
-      </form>
-    </div>
-  </div>
+<!-- map -->
+<div class="container1">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Map</h1>
+            <p>Find parking near you.</p>
 
+        </div>
+</div>
 
 <!-- monthly parking and hourly text-->
 <div class="container">
@@ -49,8 +44,24 @@
             <p>Find monthly and hourly parking near you.</p>
         </div>
     </div>
-  
-  <div id="map"></div>
-  <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnKgd5zu7Lh26I_dQVjTrxdXUpwmuSsYc&callback=initMap">
-      </script>
+
+<body>
+    <!-- get method -->
+    <!-- used to ask server to send back info -->
+    <!-- action -->
+    <!-- sends form data when form is submitted -->
+    <!-- therefore the data is sent to the search.php file -->
+    <!-- setting name to the same "name" should only allow the user to choose 1-->
+    <form name="form1" method="get" action="search.php">
+        <input type="text" placeholder="Search for Parking..." name="search">
+        <input type="submit" name="submit" value="Search"> 
+        <input type="radio" id="monthly" name="option" value="monthly">
+        <label for="monthly">Monthly</label>
+        <input type="radio" id="hourly" name="option" value="hourly">
+        <label for="hourly">Hourly</label>
+        <input type="radio" id="both" name="option" value="both">
+        <label for="both">Both</label>
+    </form>
+</body>
+
+</html>
